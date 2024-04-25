@@ -12,5 +12,6 @@ def rotate_2d_matrix(matrix):
         for k in range(0, col):
             tmp_list.append(matrix[k][i])
         new_list.append(tmp_list)
-    rot_2d = [[i[j] for j in range(len(i) - 1, -1, -1)] for i in new_list]
-    return rot_2d
+    for m in range(len(new_list)):
+        for n in range(len(new_list[m])):
+            matrix[m][n] = new_list[m].pop()
